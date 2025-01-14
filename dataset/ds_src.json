@@ -1,0 +1,51 @@
+{
+	"name": "ds_src",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "STG_CUSTOMERS",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "STG_CUSTOMERS.xlsx",
+				"folderPath": "input",
+				"fileSystem": "data"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Customer_Id",
+				"type": "String"
+			},
+			{
+				"name": "Customer_First_Name",
+				"type": "String"
+			},
+			{
+				"name": "Customer_Last_Name",
+				"type": "String"
+			},
+			{
+				"name": "Customer_DOB",
+				"type": "String"
+			},
+			{
+				"name": "Customer_Type",
+				"type": "String"
+			},
+			{
+				"name": "Is_Loyal",
+				"type": "String"
+			},
+			{
+				"name": "First_Purchase_Date",
+				"type": "String"
+			}
+		]
+	}
+}
