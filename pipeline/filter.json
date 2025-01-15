@@ -1,0 +1,34 @@
+{
+	"name": "filter",
+	"properties": {
+		"activities": [
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.string",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@contains(item(),'data')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"string": {
+				"type": "array",
+				"defaultValue": [
+					"filter",
+					"DE",
+					"ME"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
