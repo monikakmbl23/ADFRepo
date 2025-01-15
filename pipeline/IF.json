@@ -1,0 +1,62 @@
+{
+	"name": "IF",
+	"properties": {
+		"activities": [
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@lessOrEquals(int(pipeline().parameters.Amt),1000)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "ROI",
+								"value": "10"
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "ROI",
+								"value": "12"
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"Amt": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"ROI": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
